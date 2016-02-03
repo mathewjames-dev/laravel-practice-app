@@ -148,6 +148,7 @@ return [
         Creativeorange\Gravatar\GravatarServiceProvider::class,
         Intervention\Image\ImageServiceProvider::cLass,
         Cmgmyr\Messenger\MessengerServiceProvider::class,
+        Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],
 
@@ -200,6 +201,7 @@ return [
         'Html'      => Collective\Html\HtmlFacade::class,
         'Gravatar'  => Creativeorange\Gravatar\Facades\Gravatar::class,
         'Image'     => Intervention\Image\Facades\Image::cLass,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
 
     ],
 

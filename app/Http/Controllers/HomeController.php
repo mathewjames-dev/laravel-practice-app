@@ -9,14 +9,21 @@
 namespace App\Http\Controllers;
 
 
+use App\Repositories\StatusRepository;
+use App\Status;
+
 class HomeController extends Controller
 {
-    public function __construct()
+    protected $status;
+
+    public function __construct(StatusRepository $status)
     {
+        $this->status = $status;
         $this->middleware('auth');
     }
 
     public function index(){
-        return view('home');
+        $statuses = $this->status->getStatuses();
+        return view('home', compact('statuses'));
     }
 }

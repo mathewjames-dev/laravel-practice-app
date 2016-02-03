@@ -47,6 +47,7 @@
     .container{
         padding-top: 100px;
         padding-bottom: 70px;
+        width:100%;
     }
     .navbar{
         font-family: Montserrat, sans-serif;

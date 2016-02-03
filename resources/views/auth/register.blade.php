@@ -99,9 +99,9 @@
                     <h5 class="text-center">- Sign In Using Social Media -</h5>
                     <div class="social">
                         <ul class="list-inline text-center">
-                            <li><a href="#" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="btn btn-primary btn-circle"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="btn btn-primary btn-circle"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="/auth/facebook" class="btn btn-primary btn-circle"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="/auth/twitter" class="btn btn-primary disabled btn-circle"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="/auth/github" class="btn btn-primary btn-circle"><i class="fa fa-github-alt"></i></a></li>
                         </ul>
                     </div>
                 </div>
