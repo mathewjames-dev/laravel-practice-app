@@ -15,9 +15,10 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-pencil-square-o fa-fw"></i></span>
-                            <input class="form-control" id="text" type="text" name="status" placeholder="Post a status! ">
+                            <input class="form-control" onkeyup="setTimer()" id="text" type="text" name="status" placeholder="Post a status! ">
                         </div>
                         <br>
+                        <p id="testing">This field is required</p>
                         <div class="form-footer">
                             <button class="btn button" id="submit" style="display:none" type="submit"><i class="fa fa-pencil-square-o fa-fw"></i>Post Status</button>
                         </div>
@@ -47,13 +48,40 @@
     </div>
 </div>
 <script>
+    var timerHandle = false; // global!
+    function setTimer() {
+        console.log("Captured keys");
+        if (timerHandle) clearTimeout(timerHandle);
+        timerHandle = setTimeout(sendItOff,1000); // delay is in milliseconds
+    }
+    function sendItOff() {
+        var text = $("#text").val();
+        console.log("Sending " + text);
+        if($('#text').val().length > 0){
+            $('#text').css('background-color', '#7DC27D');
+            $('#testing').text("Validation passed!").append('<i class="fa fa-check"></i>');
+        }
+        else
+        {
+            $('#text').css('background-color', '#fff0f0');
+            $('#testing').text('This field is required');
+        }
+    }
     $(document).ready(function(){
         $('#text').focus(function(){
             $('#submit').show('fast');
+            console.log($('#text').val().length);
+            if($('#text').val().length >= 1){
+                $('#text').css('background-color', '#7DC27D');
+            }
+            else
+            {
+                $('#text').css('background-color', '#fff0f0');
+            }
         });
         $('#text').focusout(function(){
             $('#submit').hide('slow');
-        })
+        });
         $('#submit').mouseenter(function(){
             $(this).addClass('btn-success');
         });
@@ -76,8 +104,8 @@
                                 "<div class='timeline-time'>" +
                                 "<small>just now</small>" +
                                 "</div>" +
-                                "<div class='timeline-content>" +
-                                "<p>"+$('#test').val()+"</p>" +
+                                "<div class='timeline-content'>" +
+                                "<p>"+status+"</p>" +
                                 "</div>" +
                                 "</li>" +
                                 "<hr class='line'>"
@@ -90,15 +118,6 @@
                 });
             });
         });
-
-//        $('body').keypress(function(){
-//            $.get({
-//                url: '/',
-//                success: function(response){
-//                    console.log(response);
-//                }
-//            })
-//        })
     });
 </script>
 @stop
