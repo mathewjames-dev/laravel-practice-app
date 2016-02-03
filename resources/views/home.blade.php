@@ -18,7 +18,7 @@
                             <input class="form-control" onkeyup="setTimer()" id="text" type="text" name="status" placeholder="Post a status! ">
                         </div>
                         <br>
-                        <p id="testing">This field is required</p>
+                        <p id="testing" style="display: none;">This field is required</p>
                         <div class="form-footer">
                             <button class="btn button" id="submit" style="display:none" type="submit"><i class="fa fa-pencil-square-o fa-fw"></i>Post Status</button>
                         </div>
@@ -70,6 +70,7 @@
     $(document).ready(function(){
         $('#text').focus(function(){
             $('#submit').show('fast');
+            $('#testing').show('fast');
             console.log($('#text').val().length);
             if($('#text').val().length >= 1){
                 $('#text').css('background-color', '#7DC27D');
