@@ -41,4 +41,8 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Status');
     }
+
+    public function events(){
+        return $this->hasMany('App\Event');
+    }
 }

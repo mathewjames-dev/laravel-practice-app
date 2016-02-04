@@ -26,5 +26,9 @@ Route::controllers([
 ]);
 
 Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
-
 Route::post('/', ['as' => 'status', 'uses' => 'StatusController@postStatus']);
+
+Route::get('calendar', ['as' => 'calendar', 'uses' => 'CalendarController@index']);
+Route::post('calendar', ['as' => 'calendar-post', 'uses' => 'CalendarController@store']);
+
+Route::get('profile', ['as' => 'profile', 'uses' => 'ProfileController@index']);
