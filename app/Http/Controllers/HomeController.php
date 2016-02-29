@@ -10,20 +10,25 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\StatusRepository;
+use App\Repositories\UserRepository;
 use App\Status;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
     protected $status;
+    protected $user;
 
-    public function __construct(StatusRepository $status)
+    public function __construct(StatusRepository $status, UserRepository $user)
     {
+        $this->user = $user;
         $this->status = $status;
         $this->middleware('auth');
     }
 
     public function index(){
+        $friends = $this->user->getFriends();
         $statuses = $this->status->getStatuses();
-        return view('home', compact('statuses'));
+        return view('home', compact('statuses', 'friends', 'notifications'));
     }
 }

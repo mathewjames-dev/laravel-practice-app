@@ -10,6 +10,8 @@ namespace App\Http\Controllers;
 
 
 use App\Repositories\ProfileRepository;
+use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -22,6 +24,14 @@ class ProfileController extends Controller
     }
 
     public function index(){
-        return view('profile');
+        $user = Auth::user();
+        $friends = $user->friends;
+        return view('profile', compact('user', 'friends'));
+    }
+
+    public function show($user){
+        $user = User::findOrFail($user);
+        $friends = $user->friends;
+        return view('profile-show', compact('user', 'friends'));
     }
 }

@@ -4,7 +4,7 @@
     <div class="dropdown" style="display:none;">
         <div class="col-md-12">
             <div class="row icon-row">
-                <li><a href="/"><img class="dropdown-icons"src="{{URL::asset('img/bg.png')}}"></a></li>
+                <li><a href="/"><img class="dropdown-icons" src="{{URL::asset('img/bg.png')}}"></a></li>
                 <li><a href="/calendar"><img class="dropdown-icons active"src="{{URL::asset('img/bg.png')}}"></a></li>
                 <li><a href="/profile"><img class="dropdown-icons"src="{{URL::asset('img/bg.png')}}"></a></li>
             </div>

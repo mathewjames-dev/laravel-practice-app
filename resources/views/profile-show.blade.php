@@ -48,7 +48,7 @@
                                     This is some random text about me
                                 </p>
                                 <br>
-                                <a href="#" class="btn btn-default btn-xs"><i class="fa fa-envelope-o"></i> Send Message</a>
+                                <a href="{{ route('message-user', [$user->id]) }}" class="btn btn-default btn-xs"><i class="fa fa-envelope-o"></i> Send Message</a>
                                 <br>
                                 <br>
 
@@ -57,22 +57,9 @@
                                 <h1><small>Connections</small></h1>
                                 <ul class="list-inline friends-list">
                                     @foreach($friends as $f)
-                                        <li><img style="width:auto;height:75px;" src="{{$f->avatar}}" alt="friend-1">
-                                        </li>
+                                    <li><img style="width:auto;height:75px;" src="{{$f->avatar}}" alt="friend-1">
+                                    </li>
                                     @endforeach
-                                    <li>
-                                        <a href="#">413 more</a>
-                                    </li>
-                                </ul>
-
-                                <h1><small>Recent visitors</small></h1>
-                                <ul class="list-inline friends-list">
-                                    <li><img style="width:auto;height:75px;" src="{{URL::asset('img/pp.png')}}" alt="friend-1">
-                                    </li>
-                                    <li><img style="width:auto;height:75px;" src="{{URL::asset('img/pp.png')}}" alt="friend-1">
-                                    </li>
-                                    <li><img style="width:auto;height:75px;" src="{{URL::asset('img/pp.png')}}" alt="friend-1">
-                                    </li>
                                 </ul>
                             </div>
                         </div>

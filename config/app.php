@@ -147,7 +147,6 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Creativeorange\Gravatar\GravatarServiceProvider::class,
         Intervention\Image\ImageServiceProvider::cLass,
-        Cmgmyr\Messenger\MessengerServiceProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
 
     ],

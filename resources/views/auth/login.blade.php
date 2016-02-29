@@ -148,8 +148,8 @@
         margin-right: 20px;
     }
     #logo{
-        float:left;
-    }
+             float:left;
+         }
     #login-header-space{
         float:right;
         text-align: right;

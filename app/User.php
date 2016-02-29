@@ -45,4 +45,36 @@ class User extends Model implements AuthenticatableContract,
     public function events(){
         return $this->hasMany('App\Event');
     }
+
+    public function friends(){
+        return $this->belongsToMany('App\User', 'friends_users', 'user_id', 'friend_id');
+    }
+
+    public function addConnection(User $user){
+        $this->friends()->attach($user->id);
+    }
+
+    public function removeConnection(User $user){
+        $this->friends()->detach($user->id);
+    }
+
+    public function hasFriend(User $user){
+        return $this->friends->contains($user);
+    }
+
+    public function notifications(){
+        return $this->hasMany('App\Notification');
+    }
+
+    public function messages(){
+        return $this->hasMany('App\Message');
+    }
+
+    public function participants(){
+        return $this->hasMany('App\Participant');
+    }
+
+    public function threads(){
+        return $this->belongsToMany('App\Thread', 'participants', 'user_id', 'thread_id');
+    }
 }

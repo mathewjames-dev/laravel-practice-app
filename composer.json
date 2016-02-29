@@ -11,9 +11,10 @@
         "barryvdh/laravel-ide-helper": "^2.1",
         "creativeorange/gravatar": "~1.0",
         "guzzlehttp/guzzle": "~4.0",
-        "cmgmyr/messenger": "~2.0",
         "intervention/image": "^2.3",
-        "laravel/socialite": "^2.0"
+        "laravel/socialite": "^2.0",
+        "predis/predis": "^1.0",
+        "pusher/pusher-php-server": "^2.2"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

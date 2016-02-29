@@ -27,6 +27,7 @@ class AuthController extends Controller
 
     protected $redirectTo = '/';
     protected $loginPath = 'auth/login';
+    protected $redirectPath = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -67,8 +68,6 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-
-    protected $redirectPath = '/home';
 
     /**
      * Redirect the user to the Facebook authentication page.
